@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'fir_int_int_c' will not be exposed as RTL port." projectName="fir128_baseline" solutionName="solution1" date="2023-04-02T13:44:02.646+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Skipped source file 'input.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx." projectName="fir128_baseline" solutionName="solution1" date="2023-04-02T13:43:45.611+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Skipped source file 'out.gold.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx." projectName="fir128_baseline" solutionName="solution1" date="2023-04-02T13:43:45.600+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

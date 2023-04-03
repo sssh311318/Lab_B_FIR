@@ -1,0 +1,153 @@
+
+
+================================================================
+== Synthesis Summary Report of 'fir'
+================================================================
++ General Information: 
+    * Date:           Sun Apr  2 18:01:35 2023
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+    * Project:        fir128_Q5
+    * Solution:       reshape_pipelinefunction (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------+------+------+---------+---------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    | Modules| Issue|      | Latency | Latency | Iteration|         | Trip |          |      |         |           |           |     |
+    | & Loops| Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF    |    LUT    | URAM|
+    +--------+------+------+---------+---------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |+ fir   |    II|  0.19|       24|  240.000|         -|        1|     -|       yes|     -|  1 (~0%)|  6014 (5%)|  3618 (6%)|    -|
+    +--------+------+------+---------+---------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* REGISTER
++-----------+---------+----------+
+| Interface | Mode    | Bitwidth |
++-----------+---------+----------+
+| x         | ap_none | 32       |
+| y         | ap_none | 32       |
++-----------+---------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| y        | out       | int*     |
+| x        | in        | int      |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+
+| Argument | HW Interface | HW Type |
++----------+--------------+---------+
+| y        | y            | port    |
+| y        | y_ap_vld     | port    |
+| x        | x            | port    |
++----------+--------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------+-----+--------+------------+-----+--------+---------+
+| Name                                     | DSP | Pragma | Variable   | Op  | Impl   | Latency |
++------------------------------------------+-----+--------+------------+-----+--------+---------+
+| + fir                                    | 1   |        |            |     |        |         |
+|   tmp4_fu_2111_p2                        | -   |        | tmp4       | add | fabric | 0       |
+|   tmp3_fu_2121_p2                        | -   |        | tmp3       | add | fabric | 0       |
+|   tmp6_fu_2131_p2                        | -   |        | tmp6       | add | fabric | 0       |
+|   tmp5_fu_2141_p2                        | -   |        | tmp5       | add | fabric | 0       |
+|   tmp2_fu_2151_p2                        | -   |        | tmp2       | add | fabric | 0       |
+|   tmp9_fu_2161_p2                        | -   |        | tmp9       | add | fabric | 0       |
+|   tmp8_fu_2171_p2                        | -   |        | tmp8       | add | fabric | 0       |
+|   tmp11_fu_2181_p2                       | -   |        | tmp11      | add | fabric | 0       |
+|   tmp10_fu_2191_p2                       | -   |        | tmp10      | add | fabric | 0       |
+|   tmp7_fu_2201_p2                        | -   |        | tmp7       | add | fabric | 0       |
+|   tmp1_fu_2211_p2                        | -   |        | tmp1       | add | fabric | 0       |
+|   tmp15_fu_2217_p2                       | -   |        | tmp15      | add | fabric | 0       |
+|   tmp14_fu_2227_p2                       | -   |        | tmp14      | add | fabric | 0       |
+|   tmp17_fu_2237_p2                       | -   |        | tmp17      | add | fabric | 0       |
+|   tmp16_fu_2247_p2                       | -   |        | tmp16      | add | fabric | 0       |
+|   tmp13_fu_2257_p2                       | -   |        | tmp13      | add | fabric | 0       |
+|   tmp20_fu_2267_p2                       | -   |        | tmp20      | add | fabric | 0       |
+|   tmp19_fu_2277_p2                       | -   |        | tmp19      | add | fabric | 0       |
+|   tmp22_fu_2287_p2                       | -   |        | tmp22      | add | fabric | 0       |
+|   tmp21_fu_2297_p2                       | -   |        | tmp21      | add | fabric | 0       |
+|   tmp18_fu_2307_p2                       | -   |        | tmp18      | add | fabric | 0       |
+|   tmp12_fu_2317_p2                       | -   |        | tmp12      | add | fabric | 0       |
+|   tmp109_fu_2584_p2                      | -   |        | tmp109     | add | fabric | 0       |
+|   tmp25_fu_2323_p2                       | -   |        | tmp25      | add | fabric | 0       |
+|   tmp27_fu_2329_p2                       | -   |        | tmp27      | add | fabric | 0       |
+|   tmp29_fu_2339_p2                       | -   |        | tmp29      | add | fabric | 0       |
+|   tmp28_fu_2349_p2                       | -   |        | tmp28      | add | fabric | 0       |
+|   tmp26_fu_2359_p2                       | -   |        | tmp26      | add | fabric | 0       |
+|   tmp32_fu_2365_p2                       | -   |        | tmp32      | add | fabric | 0       |
+|   tmp34_fu_2371_p2                       | -   |        | tmp34      | add | fabric | 0       |
+|   tmp36_fu_2381_p2                       | -   |        | tmp36      | add | fabric | 0       |
+|   tmp35_fu_2391_p2                       | -   |        | tmp35      | add | fabric | 0       |
+|   tmp33_fu_2401_p2                       | -   |        | tmp33      | add | fabric | 0       |
+|   tmp157_fu_2407_p2                      | -   |        | tmp157     | add | fabric | 0       |
+|   tmp160_fu_2605_p2                      | -   |        | tmp160     | sub | fabric | 0       |
+|   tmp39_fu_2429_p2                       | -   |        | tmp39      | add | fabric | 0       |
+|   tmp38_fu_2439_p2                       | -   |        | tmp38      | add | fabric | 0       |
+|   tmp42_fu_2445_p2                       | -   |        | tmp42      | add | fabric | 0       |
+|   tmp41_fu_2455_p2                       | -   |        | tmp41      | add | fabric | 0       |
+|   tmp173_fu_2834_p2                      | -   |        | tmp173     | add | fabric | 0       |
+|   tmp43_fu_2461_p2                       | -   |        | tmp43      | add | fabric | 0       |
+|   ama_addmuladd_9s_13s_4ns_15s_17_4_1_U1 | 1   |        | tmp179     | add | dsp48  | 3       |
+|   ama_addmuladd_9s_13s_4ns_15s_17_4_1_U1 | 1   |        | tmp180     | mul | dsp48  | 3       |
+|   tmp187_fu_2467_p2                      | -   |        | tmp187     | sub | fabric | 0       |
+|   tmp188_fu_2477_p2                      | -   |        | tmp188     | sub | fabric | 0       |
+|   tmp44_fu_2487_p2                       | -   |        | tmp44      | add | fabric | 0       |
+|   tmp190_fu_2497_p2                      | -   |        | tmp190     | add | fabric | 0       |
+|   tmp45_fu_2503_p2                       | -   |        | tmp45      | add | fabric | 0       |
+|   tmp198_fu_2987_p2                      | -   |        | tmp198     | sub | fabric | 0       |
+|   tmp205_fu_2509_p2                      | -   |        | tmp205     | sub | fabric | 0       |
+|   tmp206_fu_2519_p2                      | -   |        | tmp206     | sub | fabric | 0       |
+|   tmp46_fu_2529_p2                       | -   |        | tmp46      | add | fabric | 0       |
+|   tmp208_fu_2539_p2                      | -   |        | tmp208     | add | fabric | 0       |
+|   tmp47_fu_2545_p2                       | -   |        | tmp47      | add | fabric | 0       |
+|   add_ln36_fu_3262_p2                    | -   |        | add_ln36   | add | fabric | 0       |
+|   ama_addmuladd_9s_13s_4ns_15s_17_4_1_U1 | 1   |        | add_ln36_1 | add | dsp48  | 3       |
+|   add_ln36_2_fu_2997_p2                  | -   |        | add_ln36_2 | add | fabric | 0       |
+|   acc_fu_3275_p2                         | -   |        | acc        | add | fabric | 0       |
++------------------------------------------+-----+--------+------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++---------------+-----------------------------------+-----------------------------------------------------------------------+
+| Type          | Options                           | Location                                                              |
++---------------+-----------------------------------+-----------------------------------------------------------------------+
+| array_reshape | variable=c complete dim=1         | fir128_Q5/reshape_pipelinefunction/directives.tcl:8 in fir, c         |
+| array_reshape | variable=shift_reg complete dim=1 | fir128_Q5/reshape_pipelinefunction/directives.tcl:7 in fir, shift_reg |
+| pipeline      |                                   | fir128_Q5/reshape_pipelinefunction/directives.tcl:9 in fir            |
++---------------+-----------------------------------+-----------------------------------------------------------------------+
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="out.gold.dat" path="D:\HLS\HLS_LabB\fir128_Q4\out.gold.dat"/>
+    <originFiles name="input.dat" path="D:\HLS\HLS_LabB\fir128_Q4\input.dat"/>
+    <originFiles name="fir.h" path="D:\HLS\HLS_LabB\fir128_Q4\fir.h"/>
+    <originFiles name="fir.cpp" path="D:\HLS\HLS_LabB\fir128_Q4\fir.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="fir_test.cpp" path="D:\HLS\HLS_LabB\fir128_Q4\fir_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

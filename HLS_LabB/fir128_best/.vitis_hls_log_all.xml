@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Register 'fir_int_int_shift_reg' is power-on initialization." projectName="fir128_best" solutionName="merge" date="2023-04-02T18:30:23.099+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-24] fir128_best/fir.cpp:45: Index for bit vector operation is out of bound." projectName="fir128_best" solutionName="merge" date="2023-04-02T18:30:19.145+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 214-167] The program may have out of bound array access (fir128_best/fir.cpp:45:16)" projectName="fir128_best" solutionName="merge" date="2023-04-02T18:30:18.629+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Skipped source file 'input.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx." projectName="fir128_best" solutionName="merge" date="2023-04-02T18:30:08.137+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Skipped source file 'out.gold.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx." projectName="fir128_best" solutionName="merge" date="2023-04-02T18:30:08.130+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'fir_int_int_shift_reg' is power-on initialization." projectName="fir128_best" solutionName="c_t_int" date="2023-04-02T18:23:17.216+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Skipped source file 'input.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx." projectName="fir128_best" solutionName="c_t_int" date="2023-04-02T18:23:05.683+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Skipped source file 'out.gold.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx." projectName="fir128_best" solutionName="c_t_int" date="2023-04-02T18:23:05.675+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

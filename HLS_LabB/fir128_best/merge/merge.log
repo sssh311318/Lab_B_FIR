@@ -1,0 +1,266 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./fir128_best/merge/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -type complete -dim 1 fir c 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -type complete -dim 1 fir shift_reg 
+INFO: [HLS 200-1510] Running: set_directive_top -name fir fir 
+INFO: [HLS 200-1510] Running: set_directive_pipeline fir 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 0 seconds. Total elapsed time: 7.17 seconds; peak allocated memory: 1.389 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./fir128_best/merge/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -type complete -dim 1 fir c 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -type complete -dim 1 fir shift_reg 
+INFO: [HLS 200-1510] Running: set_directive_top -name fir fir 
+INFO: [HLS 200-1510] Running: set_directive_pipeline fir 
+INFO: [HLS 200-1510] Running: csynth_design 
+WARNING: [HLS 200-40] Skipped source file 'out.gold.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+WARNING: [HLS 200-40] Skipped source file 'input.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.015 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-10] Analyzing design file 'fir128_best/fir.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.41 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi5ELb1EEC2EDq5_i' into 'ap_int_base<5, true>::ap_int_base(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<5, true>::ap_int_base(int)' into 'ap_int<5>::ap_int(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int.h:179:57)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi13ELb1EEC2EDq13_i' into 'ap_int_base<13, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:231:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi13ELb1EEC2EDq13_i' into 'ap_int_base<13, true>::ap_int_base<5, true>(ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:231:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi13ELb1EEC2EDq13_i' into 'ap_int_base<13, true>::ap_int_base(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' into 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540:339)
+INFO: [HLS 214-131] Inlining function 'ap_int<13>::ap_int<13, true>(ap_int_base<13, true> const&)' into 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540:554)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::ap_int_base(int)' into 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540:516)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::ap_int_base<5, true>(ap_int_base<5, true> const&)' into 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540:427)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<8, true>::ssdm_int(signed char)' into 'ap_int_base<8, true>::ap_int_base(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::ap_int_base(int)' into 'ap_int<8>::ap_int(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int.h:179:57)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:16)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::operator long long() const' into 'fir(int*, int)' (fir128_best/fir.cpp:49:10)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' into 'fir(int*, int)' (fir128_best/fir.cpp:49:23)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:48:18)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::operator long long() const' into 'fir(int*, int)' (fir128_best/fir.cpp:46:10)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' into 'fir(int*, int)' (fir128_best/fir.cpp:46:23)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:564)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:560)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:556)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:552)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:548)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:544)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:540)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:536)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:532)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:528)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:524)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:520)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:516)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:512)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:508)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:504)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:500)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:496)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:492)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:488)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:484)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:480)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:476)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:472)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:468)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:465)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:462)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:458)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:454)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:449)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:444)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:439)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:434)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:429)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:424)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:419)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:414)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:409)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:404)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:399)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:394)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:390)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:386)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:383)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:380)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:376)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:372)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:368)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:364)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:360)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:356)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:352)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:348)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:344)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:340)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:336)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:332)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:329)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:326)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:322)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:318)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:313)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:308)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:303)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:298)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:293)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:288)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:283)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:278)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:273)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:268)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:263)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:258)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:254)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:250)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:247)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:244)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:240)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:236)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:232)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:228)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:224)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:220)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:216)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:212)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:208)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:204)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:200)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:196)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:193)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:190)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:186)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:182)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:177)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:172)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:167)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:162)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:157)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:152)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:147)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:142)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:137)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:132)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:127)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:122)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:117)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:112)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:107)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:102)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:97)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:92)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:87)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:82)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:77)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:72)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:67)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:62)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:57)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:52)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:47)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:42)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:38)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:34)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:28)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:24)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:20)
+INFO: [HLS 214-291] Loop 'FIR' is marked as complete unroll implied by the pipeline pragma (fir128_best/fir.cpp:43:2)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (fir128_best/fir.cpp:24:8)
+INFO: [HLS 214-186] Unrolling loop 'FIR' (fir128_best/fir.cpp:43:2) in function 'fir' completely with a factor of 128 (fir128_best/fir.cpp:18:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (fir128_best/fir.cpp:24:8) in function 'fir' completely with a factor of 128 (fir128_best/fir.cpp:18:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (fir128_best/fir.cpp:45:16)
+INFO: [HLS 214-248] Applying array_reshape to '_ZZ3firPiiE9shift_reg': Complete reshaping on dimension 1. (fir128_best/fir.cpp:24:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.102 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.091 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-24] fir128_best/fir.cpp:45: Index for bit vector operation is out of bound.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.406 seconds; current allocated memory: 1.405 GB.
+INFO: [XFORM 203-11] Balancing expressions in function 'fir' (fir128_best/fir.cpp:18)...130 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.591 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.234 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fir' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln1540) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_124) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_119) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_118) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_93) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_92) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_87) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_86) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_77) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_76) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_71) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_61) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_60) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_55) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_54) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_45) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_44) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_39) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_38) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_29) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_28) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_23) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=ret_V_22) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining function 'fir'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 6, function 'fir'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.537 seconds; current allocated memory: 1.405 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.611 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/y' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fir' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'fir_int_int_shift_reg' is power-on initialization.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fir' pipeline 'fir' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_4ns_11s_13_4_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_4ns_12s_13_4_1': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_4ns_4ns_12_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_5s_12s_13_4_1': 12 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.656 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.745 seconds; current allocated memory: 1.405 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.329 seconds; current allocated memory: 1.405 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fir.
+INFO: [VLOG 209-307] Generating Verilog RTL for fir.
+INFO: [HLS 200-789] **** Estimated Fmax: 140.18 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 6 seconds. CPU system time: 0 seconds. Elapsed time: 19.795 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 9 seconds. Total CPU system time: 1 seconds. Total elapsed time: 22.974 seconds; peak allocated memory: 1.405 GB.

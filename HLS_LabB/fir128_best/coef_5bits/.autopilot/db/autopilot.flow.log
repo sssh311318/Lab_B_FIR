@@ -1,0 +1,796 @@
+INFO-FLOW: Workspace D:/HLS/HLS_LabB/fir128_best/pipeline_function opened at Sun Apr 02 18:12:20 +0800 2023
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7z020-clg400-1 
+Execute       create_platform xc7z020-clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/Xilinx/Vitis_HLS/2022.1\lib\win64.o\librdi_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/Xilinx/Vivado/2022.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Command       create_platform done; 2.337 sec.
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.101 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 2.489 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     get_config_interface -m_axi_latency 
+Execute     get_config_interface -m_axi_alignment_byte_size 
+Execute     get_config_interface -m_axi_max_widen_bitwidth 
+Execute     get_config_interface -default_interface 
+Execute     get_config_rtl -register_reset_num 
+Command   open_solution done; 2.506 sec.
+Execute   set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+Execute     create_platform xc7z020-clg400-1 -board  
+Execute     source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.184 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   source ./fir128_best/pipeline_function/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./fir128_best/pipeline_function/directives.tcl
+Execute     set_directive_array_reshape -type complete -dim 1 fir c 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -type complete -dim 1 fir c 
+Execute     set_directive_array_reshape -type complete -dim 1 fir shift_reg 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -type complete -dim 1 fir shift_reg 
+Execute     set_directive_top -name fir fir 
+INFO: [HLS 200-1510] Running: set_directive_top -name fir fir 
+Execute     set_directive_pipeline fir 
+INFO: [HLS 200-1510] Running: set_directive_pipeline fir 
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -hw_syn 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -pre_tcl 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+WARNING: [HLS 200-40] Skipped source file 'out.gold.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+WARNING: [HLS 200-40] Skipped source file 'input.dat'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.392 GB.
+INFO: [HLS 200-10] Analyzing design file 'fir128_best/fir.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling fir128_best/fir.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/clang fir128_best/fir.cpp -foptimization-record-file=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot D:/Xilinx/Vitis_HLS/2022.1/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot -I D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp -hls-platform-db-name=D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.cpp.clang.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.cpp.clang.err.log 
+Command       ap_eval done; 0.196 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.2 seconds per iteration
+Execute       set_directive_top fir -name=fir 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO-FLOW: Source syntax check for synthesis
+Execute       ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp -hls-platform-db-name=D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/clang.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/clang.err.log 
+Command       ap_eval done; 0.491 sec.
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp std=gnu++14 -target fpga  -directive=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/.systemc_flag -fix-errors D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.428 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp std=gnu++14 -target fpga  -directive=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/all.directive.json 
+INFO-FLOW: exec D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/all.directive.json -fix-errors D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.664 sec.
+Execute       clang_tidy xilinx-remove-assert -desc remove-assert D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.435 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 1.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp.clang-tidy.loop-label.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp.clang-tidy.loop-label.err.log 
+Command         ap_eval done; 0.983 sec.
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command       clang_tidy done; 1.009 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp.xilinx-dataflow-lawyer.err.log 
+Command       ap_eval done; 0.429 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot -I D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.bc -hls-platform-db-name=D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp.clang.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.pp.0.cpp.clang.err.log 
+Command       ap_eval done; 0.508 sec.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.298 seconds; current allocated memory: 1.392 GB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.0.bc -args  "D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.g.bc"  
+Execute         ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/llvm-link D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.g.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.0.bc > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.1.lower.bc -args D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.1.lower.bc > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.2.m1.bc -args D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.1.lower.bc -only-needed D:/Xilinx/Vitis_HLS/2022.1/win64/lib/libhlsm_39.bc D:/Xilinx/Vitis_HLS/2022.1/win64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/llvm-link D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.1.lower.bc -only-needed D:/Xilinx/Vitis_HLS/2022.1/win64/lib/libhlsm_39.bc D:/Xilinx/Vitis_HLS/2022.1/win64/lib/libhlsmc++_39.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.2.m1.bc > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command         ap_eval done; 2.438 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 2.439 sec.
+Execute       run_link_or_opt -opt -out D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.3.fpc.bc -args D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=fir -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=fir -reflow-float-conversion -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.3.fpc.bc > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command         ap_eval done; 0.95 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.952 sec.
+Execute       run_link_or_opt -out D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.4.m2.bc -args D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.3.fpc.bc -only-needed D:/Xilinx/Vitis_HLS/2022.1/win64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/llvm-link D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.3.fpc.bc -only-needed D:/Xilinx/Vitis_HLS/2022.1/win64/lib/libfloatconversion_39.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.4.m2.bc > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.5.gdce.bc -args D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=fir 
+Execute         ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=fir -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.5.gdce.bc > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+INFO-FLOW: 
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_interface -default_slave_interface 
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_interface -m_axi_offset 
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -m_axi_num_read_outstanding 
+Execute       get_config_interface -m_axi_num_write_outstanding 
+Execute       get_config_interface -m_axi_max_read_burst_length 
+Execute       get_config_interface -m_axi_max_write_burst_length 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -m_axi_auto_max_ports 
+Execute       get_config_interface -m_axi_num_read_outstanding 
+Execute       get_config_interface -m_axi_num_write_outstanding 
+Execute       get_config_interface -m_axi_max_read_burst_length 
+Execute       get_config_interface -m_axi_max_write_burst_length 
+Execute       get_config_interface -s_axilite_data64 
+Execute       get_config_compile -instruction_warning_threshold 
+Execute       get_config_compile -pipeline_loops 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_compile -pragma_strict_mode 
+Execute       get_config_compile -pipeline_style 
+Execute       get_config_dataflow -strict_mode 
+Execute       get_config_array_partition -throughput_driven 
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+Execute       get_clock_period -ns -default 
+INFO-FLOW: Doing LTO.
+Execute       ap_eval exec -ignorestderr D:/Xilinx/Vitis_HLS/2022.1/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=fir -mllvm -hls-db-dir -mllvm D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -x ir D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.5.gdce.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.lto.bc -hls-platform-db-name=D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 > D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command       ap_eval done; 0.458 sec.
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi5ELb1EEC2EDq5_i' into 'ap_int_base<5, true>::ap_int_base(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<5, true>::ap_int_base(int)' into 'ap_int<5>::ap_int(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int.h:179:57)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<8, true>::ssdm_int(signed char)' into 'ap_int_base<8, true>::ap_int_base(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::ap_int_base(int)' into 'ap_int<8>::ap_int(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int.h:179:57)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi13ELb1EEC2EDq13_i' into 'ap_int_base<13, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:231:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi13ELb1EEC2EDq13_i' into 'ap_int_base<13, true>::ap_int_base<5, true>(ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:231:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi13ELb1EEC2EDq13_i' into 'ap_int_base<13, true>::ap_int_base(int)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' into 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540:339)
+INFO: [HLS 214-131] Inlining function 'ap_int<13>::ap_int<13, true>(ap_int_base<13, true> const&)' into 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540:554)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::ap_int_base(int)' into 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540:516)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::ap_int_base<5, true>(ap_int_base<5, true> const&)' into 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' (D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540:427)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:16)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::operator long long() const' into 'fir(int*, int)' (fir128_best/fir.cpp:35:10)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::RType<5, true>::mult operator*<8, true, 5, true>(ap_int_base<8, true> const&, ap_int_base<5, true> const&)' into 'fir(int*, int)' (fir128_best/fir.cpp:35:23)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:31:18)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:564)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:560)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:556)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:552)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:548)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:544)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:540)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:536)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:532)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:528)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:524)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:520)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:516)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:512)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:508)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:504)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:500)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:496)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:492)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:488)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:484)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:480)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:476)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:472)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:468)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:465)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:462)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:458)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:454)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:449)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:444)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:439)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:434)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:429)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:424)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:419)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:414)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:409)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:404)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:399)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:394)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:390)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:386)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:383)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:380)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:376)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:372)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:368)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:364)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:360)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:356)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:352)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:348)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:344)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:340)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:336)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:332)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:329)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:326)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:322)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:318)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:313)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:308)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:303)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:298)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:293)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:288)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:283)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:278)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:273)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:268)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:263)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:258)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:254)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:250)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:247)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:244)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:240)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:236)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:232)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:228)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:224)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:220)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:216)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:212)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:208)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:204)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:200)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:196)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:193)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:190)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:186)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:182)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:177)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:172)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:167)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:162)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:157)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:152)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:147)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:142)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:137)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:132)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:127)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:122)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:117)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:112)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:107)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:102)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:97)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:92)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:87)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:82)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:77)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:72)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:67)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:62)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:57)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:52)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:47)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:42)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:38)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:34)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:28)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:24)
+INFO: [HLS 214-131] Inlining function 'ap_int<5>::ap_int(int)' into 'fir(int*, int)' (fir128_best/fir.cpp:20:20)
+INFO: [HLS 214-291] Loop 'MAC' is marked as complete unroll implied by the pipeline pragma (fir128_best/fir.cpp:34:2)
+INFO: [HLS 214-291] Loop 'Time_delay_loop' is marked as complete unroll implied by the pipeline pragma (fir128_best/fir.cpp:28:2)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (fir128_best/fir.cpp:24:8)
+INFO: [HLS 214-186] Unrolling loop 'MAC' (fir128_best/fir.cpp:34:2) in function 'fir' completely with a factor of 128 (fir128_best/fir.cpp:18:0)
+INFO: [HLS 214-186] Unrolling loop 'Time_delay_loop' (fir128_best/fir.cpp:28:2) in function 'fir' completely with a factor of 128 (fir128_best/fir.cpp:18:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (fir128_best/fir.cpp:24:8) in function 'fir' completely with a factor of 128 (fir128_best/fir.cpp:18:0)
+INFO: [HLS 214-248] Applying array_reshape to '_ZZ3firPiiE9shift_reg': Complete reshaping on dimension 1. (fir128_best/fir.cpp:24:0)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.895 seconds; current allocated memory: 1.392 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 1.392 GB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top fir -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.0.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.113 seconds; current allocated memory: 1.392 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.1.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform done; 0.353 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.2.prechk.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.386 seconds; current allocated memory: 1.392 GB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.g.1.bc to D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.o.1.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.o.1.tmp.bc -f 
+Command         transform done; 0.539 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.o.1.tmp.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-11] Balancing expressions in function 'fir' (fir128_best/fir.cpp:18)...129 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.622 seconds; current allocated memory: 1.392 GB.
+Execute         get_config_compile -enable_auto_rewind 
+Execute         get_config_compile -enable_loop_extract 
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.o.2.bc -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Command         transform done; 0.212 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.214 seconds; current allocated memory: 1.392 GB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 1.344 sec.
+Command     elaborate done; 11.558 sec.
+Execute     ap_eval exec zip -j D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'fir' ...
+Execute       ap_set_top_model fir 
+Execute       get_model_list fir -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model fir 
+Execute       get_model_list fir -filter all-wo-channel 
+INFO-FLOW: Model list for configure: fir
+INFO-FLOW: Configuring Module : fir ...
+Execute       set_default_model fir 
+Execute       apply_spec_resource_limit fir 
+INFO-FLOW: Model list for preprocess: fir
+INFO-FLOW: Preprocessing Module: fir ...
+Execute       set_default_model fir 
+Execute       cdfg_preprocess -model fir 
+Execute       rtl_gen_preprocess fir 
+INFO-FLOW: Model list for synthesis: fir
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model fir 
+Execute       schedule -model fir 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_116) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_113) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_86) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_83) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_72) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_56) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_53) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_39) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_27) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln35_24) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining function 'fir'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 5, function 'fir'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.636 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.744 seconds; current allocated memory: 1.392 GB.
+Execute       syn_report -verbosereport -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.172 sec.
+Execute       db_write -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.sched.adb -f 
+Command       db_write done; 0.129 sec.
+INFO-FLOW: Finish scheduling fir.
+Execute       set_default_model fir 
+Execute       bind -model fir 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.3 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.602 seconds; current allocated memory: 1.392 GB.
+Execute       syn_report -verbosereport -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.698 sec.
+Execute       db_write -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.bind.adb -f 
+Command       db_write done; 0.163 sec.
+INFO-FLOW: Finish binding fir.
+Execute       get_model_list fir -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess fir 
+INFO-FLOW: Model list for RTL generation: fir
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model fir -top_prefix  -sub_prefix fir_ -mg_file D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/y' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fir' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'fir_int_int_shift_reg' is power-on initialization.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fir' pipeline 'fir' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'am_addmul_8s_8s_5s_13_4_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ama_addmuladd_8s_8s_4ns_12s_14_4_1': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir'.
+Command       create_rtl_model done; 0.717 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.6 seconds; current allocated memory: 1.392 GB.
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.rtl_wrap.cfg.tcl 
+Execute       gen_rtl fir -istop -style xilinx -f -lang vhdl -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/syn/vhdl/fir 
+Command       gen_rtl done; 0.391 sec.
+Execute       gen_rtl fir -istop -style xilinx -f -lang vlog -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/syn/verilog/fir 
+Command       gen_rtl done; 0.198 sec.
+Execute       syn_report -csynth -model fir -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/syn/report/fir_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.194 sec.
+Execute       syn_report -rtlxml -model fir -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/syn/report/fir_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.189 sec.
+Execute       syn_report -verbosereport -model fir -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.894 sec.
+Execute       db_write -model fir -f -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.adb 
+Command       db_write done; 0.354 sec.
+Execute       db_write -model fir -bindview -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info fir -p D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir 
+Execute       export_constraint_db -f -tool general -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.constraint.tcl 
+Execute       syn_report -designview -model fir -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.design.xml 
+Command       syn_report done; 0.384 sec.
+Execute       syn_report -csynthDesign -model fir -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/syn/report/csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       get_config_rtl -disable_wave_debug 
+Execute       syn_report -wcfg -model fir -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model fir -o D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.protoinst 
+Execute       get_config_debug -directory 
+Execute       sc_get_clocks fir 
+Execute       get_config_export -vivado_clock 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       sc_get_portdomain fir 
+INFO-FLOW: Model list for RTL component generation: fir
+INFO-FLOW: Handling components in module [fir] ... 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.compgen.tcl 
+INFO-FLOW: Found component fir_ama_addmuladd_8s_8s_4ns_12s_14_4_1.
+INFO-FLOW: Append model fir_ama_addmuladd_8s_8s_4ns_12s_14_4_1
+INFO-FLOW: Found component fir_am_addmul_8s_8s_5s_13_4_1.
+INFO-FLOW: Append model fir_am_addmul_8s_8s_5s_13_4_1
+INFO-FLOW: Append model fir
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: fir_ama_addmuladd_8s_8s_4ns_12s_14_4_1 fir_am_addmul_8s_8s_5s_13_4_1 fir
+INFO-FLOW: Generating D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model fir_ama_addmuladd_8s_8s_4ns_12s_14_4_1
+INFO-FLOW: To file: write model fir_am_addmul_8s_8s_5s_13_4_1
+INFO-FLOW: To file: write model fir
+INFO-FLOW: Generating D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+Execute       get_top 
+Execute       get_config_export -ipname 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_rtl -module_auto_prefix 
+INFO-FLOW: DBG:PUTS: read_platform_lib D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/global.setting.tcl
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/common.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/op.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/interface.gen 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/global.setting.tcl 
+Execute       source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/vhdl' dstVlogDir='D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/vlog' tclDir='D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db' modelList='fir_ama_addmuladd_8s_8s_4ns_12s_14_4_1
+fir_am_addmul_8s_8s_5s_13_4_1
+fir
+' expOnly='0'
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/global.setting.tcl 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/global.setting.tcl 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Command       ap_source done; 0.72 sec.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 4.018 seconds; current allocated memory: 1.392 GB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='fir_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+Execute       get_config_op mul -impl 
+Execute       get_config_op mul -latency 
+Execute       get_config_op mul -precision 
+Execute       get_config_op add -impl 
+Execute       get_config_op add -latency 
+Execute       get_config_op add -precision 
+Execute       get_config_op sub -impl 
+Execute       get_config_op sub -latency 
+Execute       get_config_op sub -precision 
+Execute       get_config_op fadd -impl 
+Execute       get_config_op fadd -latency 
+Execute       get_config_op fadd -precision 
+Execute       get_config_op fsub -impl 
+Execute       get_config_op fsub -latency 
+Execute       get_config_op fsub -precision 
+Execute       get_config_op fdiv -impl 
+Execute       get_config_op fdiv -latency 
+Execute       get_config_op fdiv -precision 
+Execute       get_config_op fexp -impl 
+Execute       get_config_op fexp -latency 
+Execute       get_config_op fexp -precision 
+Execute       get_config_op flog -impl 
+Execute       get_config_op flog -latency 
+Execute       get_config_op flog -precision 
+Execute       get_config_op fmul -impl 
+Execute       get_config_op fmul -latency 
+Execute       get_config_op fmul -precision 
+Execute       get_config_op frsqrt -impl 
+Execute       get_config_op frsqrt -latency 
+Execute       get_config_op frsqrt -precision 
+Execute       get_config_op frecip -impl 
+Execute       get_config_op frecip -latency 
+Execute       get_config_op frecip -precision 
+Execute       get_config_op fsqrt -impl 
+Execute       get_config_op fsqrt -latency 
+Execute       get_config_op fsqrt -precision 
+Execute       get_config_op dadd -impl 
+Execute       get_config_op dadd -latency 
+Execute       get_config_op dadd -precision 
+Execute       get_config_op dsub -impl 
+Execute       get_config_op dsub -latency 
+Execute       get_config_op dsub -precision 
+Execute       get_config_op ddiv -impl 
+Execute       get_config_op ddiv -latency 
+Execute       get_config_op ddiv -precision 
+Execute       get_config_op dexp -impl 
+Execute       get_config_op dexp -latency 
+Execute       get_config_op dexp -precision 
+Execute       get_config_op dlog -impl 
+Execute       get_config_op dlog -latency 
+Execute       get_config_op dlog -precision 
+Execute       get_config_op dmul -impl 
+Execute       get_config_op dmul -latency 
+Execute       get_config_op dmul -precision 
+Execute       get_config_op drsqrt -impl 
+Execute       get_config_op drsqrt -latency 
+Execute       get_config_op drsqrt -precision 
+Execute       get_config_op drecip -impl 
+Execute       get_config_op drecip -latency 
+Execute       get_config_op drecip -precision 
+Execute       get_config_op dsqrt -impl 
+Execute       get_config_op dsqrt -latency 
+Execute       get_config_op dsqrt -precision 
+Execute       get_config_op hadd -impl 
+Execute       get_config_op hadd -latency 
+Execute       get_config_op hadd -precision 
+Execute       get_config_op hsub -impl 
+Execute       get_config_op hsub -latency 
+Execute       get_config_op hsub -precision 
+Execute       get_config_op hdiv -impl 
+Execute       get_config_op hdiv -latency 
+Execute       get_config_op hdiv -precision 
+Execute       get_config_op hmul -impl 
+Execute       get_config_op hmul -latency 
+Execute       get_config_op hmul -precision 
+Execute       get_config_op hsqrt -impl 
+Execute       get_config_op hsqrt -latency 
+Execute       get_config_op hsqrt -precision 
+Execute       get_config_op facc -impl 
+Execute       get_config_op facc -latency 
+Execute       get_config_op facc -precision 
+Execute       get_config_op fmacc -impl 
+Execute       get_config_op fmacc -latency 
+Execute       get_config_op fmacc -precision 
+Execute       get_config_op fmadd -impl 
+Execute       get_config_op fmadd -latency 
+Execute       get_config_op fmadd -precision 
+Execute       get_config_storage fifo -auto_srl_max_bits 
+Execute       get_config_storage fifo -auto_srl_max_depth 
+Execute       get_config_storage fifo -impl 
+Execute       get_solution -flow_target 
+Execute       get_config_array_partition -complete_threshold 
+Execute       get_config_array_partition -throughput_driven 
+Execute       get_config_compile -enable_auto_rewind 
+Execute       get_config_compile -ignore_long_run_time 
+Execute       get_config_compile -name_max_length 
+Execute       get_config_compile -no_signed_zeros 
+Execute       get_config_compile -pipeline_loops 
+Execute       get_config_compile -pipeline_style 
+Execute       get_config_compile -pragma_strict_mode 
+Execute       get_config_compile -pre_tcl 
+Execute       get_config_compile -unsafe_math_optimizations 
+Execute       get_config_dataflow -default_channel 
+Execute       get_config_dataflow -disable_fifo_sizing_opt 
+Execute       get_config_dataflow -fifo_depth 
+Execute       get_config_dataflow -override_user_fifo_depth 
+Execute       get_config_dataflow -scalar_fifo_depth 
+Execute       get_config_dataflow -start_fifo_depth 
+Execute       get_config_dataflow -strict_mode 
+Execute       get_config_dataflow -strict_stable_sync 
+Execute       get_config_dataflow -task_level_fifo_depth 
+Execute       get_config_debug -directory 
+Execute       get_config_debug -enable 
+Execute       get_config_export -description 
+Execute       get_config_export -display_name 
+Execute       get_config_export -format 
+Execute       get_config_export -ip_xdc_file 
+Execute       get_config_export -ip_xdc_ooc_file 
+Execute       get_config_export -ipname 
+Execute       get_config_export -library 
+Execute       get_config_export -output 
+Execute       get_config_export -rtl 
+Execute       get_config_export -taxonomy 
+Execute       get_config_export -vendor 
+Execute       get_config_export -version 
+Execute       get_config_export -vivado_clock 
+Execute       get_config_export -vivado_impl_strategy 
+Execute       get_config_export -vivado_max_timing_paths 
+Execute       get_config_export -vivado_optimization_level 
+Execute       get_config_export -vivado_pblock 
+Execute       get_config_export -vivado_phys_opt 
+Execute       get_config_export -vivado_report_level 
+Execute       get_config_export -vivado_synth_design_args 
+Execute       get_config_export -vivado_synth_strategy 
+Execute       get_config_interface -clock_enable 
+Execute       get_config_interface -default_slave_interface 
+Execute       get_config_interface -m_axi_addr64 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_auto_max_ports 
+Execute       get_config_interface -m_axi_buffer_impl 
+Execute       get_config_interface -m_axi_conservative_mode 
+Execute       get_config_interface -m_axi_flush_mode 
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_max_read_burst_length 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -m_axi_max_write_burst_length 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_num_read_outstanding 
+Execute       get_config_interface -m_axi_num_write_outstanding 
+Execute       get_config_interface -m_axi_offset 
+Execute       get_config_interface -register_io 
+Execute       get_config_interface -s_axilite_auto_restart_counter 
+Execute       get_config_interface -s_axilite_data64 
+Execute       get_config_interface -s_axilite_interrupt_mode 
+Execute       get_config_interface -s_axilite_mailbox 
+Execute       get_config_interface -s_axilite_status_regs 
+Execute       get_config_interface -s_axilite_sw_reset 
+Execute       get_config_rtl -deadlock_detection 
+Execute       get_config_rtl -header 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -mult_keep_attribute 
+Execute       get_config_rtl -register_all_io 
+Execute       get_config_rtl -register_reset_num 
+Execute       get_config_rtl -reset 
+Execute       get_config_rtl -reset_async 
+Execute       get_config_rtl -reset_level 
+Execute       get_config_schedule -enable_dsp_full_reg 
+Execute       get_config_unroll -tripcount_threshold 
+INFO-FLOW: Done: create_csynth_xml config info time: 0.1 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=D:/HLS/HLS_LabB/fir128_best/pipeline_function/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='fir_ama_addmuladd_8s_8s_4ns_12s_14_4_1
+fir_am_addmul_8s_8s_5s_13_4_1
+fir
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/global.setting.tcl 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/global.setting.tcl 
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/top-io-be.tcl 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.tbgen.tcl 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.rtl_wrap.cfg.tcl 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.compgen.dataonly.tcl 
+Execute       get_config_export -format 
+Execute       get_config_export -vendor 
+Execute       get_config_export -library 
+Execute       get_config_export -version 
+Execute       get_config_export -ipname 
+Execute       get_config_export -taxonomy 
+Execute       get_config_export -description 
+Execute       get_config_export -display_name 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.tbgen.tcl 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       get_solution -flow_target 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -stall_sig_gen 
+Execute       get_config_rtl -profile 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/fir.constraint.tcl 
+Execute       sc_get_clocks fir 
+Execute       source D:/HLS/HLS_LabB/fir128_best/pipeline_function/.autopilot/db/global.setting.tcl 
+Execute       get_config_export -ip_xdc_file 
+Execute       get_config_export -ip_xdc_ooc_file 
+Execute       get_config_debug -directory 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} report_dict {TOPINST fir MODULE2INSTS {fir fir} INST2MODULE {fir fir} INSTDATA {fir {DEPTH 1 CHILDREN {}}} MODULEDATA {fir {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_fu_1015_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_1_fu_1059_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_2_fu_1103_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_3_fu_1147_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_4_fu_1191_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_5_fu_1235_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_6_fu_1279_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_7_fu_1323_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_8_fu_1367_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_8 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_9_fu_1411_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_9 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_10_fu_1455_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_10 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_11_fu_1499_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_11 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_12_fu_1543_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_12 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_13_fu_1587_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_13 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_14_fu_1631_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_14 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_15_fu_1675_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_15 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_16_fu_1719_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_16 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_17_fu_1763_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_17 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_18_fu_1807_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_18 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_19_fu_1851_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_19 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_20_fu_1895_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_20 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_21_fu_1939_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_21 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_23_fu_1995_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_23 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_24_fu_2021_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_24 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_33_fu_2507_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_33 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_34_fu_2533_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_34 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_36_fu_2607_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_36 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_37_fu_2651_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_37 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_38_fu_2695_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_38 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_39_fu_2739_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_39 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_40_fu_2783_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_40 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_41_fu_2827_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_41 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_42_fu_2871_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_42 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_43_fu_2915_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_43 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_45_fu_2971_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_45 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_46_fu_2997_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_46 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_55_fu_3483_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_55 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_56_fu_3509_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_56 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_58_fu_3583_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_58 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_59_fu_3627_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_59 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_60_fu_3671_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_60 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_61_fu_3715_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_61 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_62_fu_3759_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_62 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_63_fu_3803_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_63 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_64_fu_3847_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_64 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ret_V_65_fu_3891_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_65 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_67_fu_3947_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_67 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_68_fu_3973_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_68 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_93_fu_5259_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_93 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME ret_V_94_fu_5285_p2 SOURCE {D:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:1540} VARIABLE ret_V_94 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_fu_5349_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_1_fu_5359_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME acc_2_fu_5369_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE acc_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_3_fu_5379_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_4_fu_5389_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_5_fu_5399_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_6_fu_5409_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_7_fu_5419_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_8_fu_5429_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_8 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_9_fu_5435_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_9 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_10_fu_5445_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_10 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_11_fu_5455_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_11 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_12_fu_5465_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_12 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_13_fu_5475_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_13 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_14_fu_5485_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_14 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_15_fu_5495_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_15 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_16_fu_6037_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_16 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_17_fu_5501_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_17 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_18_fu_5511_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_18 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_19_fu_5521_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_19 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_20_fu_5531_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_20 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_21_fu_5541_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_21 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_22_fu_5551_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_22 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_23_fu_5561_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_23 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U1 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_24 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U1 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_25_fu_5567_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_25 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U1 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_26 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln35_fu_5573_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE sub_ln35 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_27 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U2 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_1 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_28_fu_6147_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_28 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_29_fu_6157_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_29 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_30_fu_6167_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_30 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_31_fu_6369_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_31 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_32_fu_5579_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_32 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_33_fu_5589_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_33 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_34_fu_5599_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_34 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_35_fu_5605_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_35 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_36_fu_5615_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_36 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_37_fu_5625_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_37 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_38_fu_6049_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_38 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U3 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_39 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U3 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_2 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln35_1_fu_5631_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE sub_ln35_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_40_fu_6182_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_40 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_41_fu_5637_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_41 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U4 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_42 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U4 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_3 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U4 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_43 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_44_fu_6195_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_44 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_45_fu_6205_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_45 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_46_fu_5643_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_46 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_47_fu_5653_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_47 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_48_fu_5663_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_48 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_49_fu_5673_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_49 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_50_fu_5683_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_50 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_51_fu_5693_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_51 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_52_fu_5703_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_52 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U5 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_53 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U5 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_4 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_54_fu_5709_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_54 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U5 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_55 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln35_2_fu_5715_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE sub_ln35_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U6 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_56 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U6 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_5 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_57_fu_6223_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_57 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_58_fu_6233_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_58 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_59_fu_6243_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_59 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_60_fu_6385_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_60 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_61_fu_6395_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_61 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_62_fu_5721_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_62 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_63_fu_5731_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_63 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_64_fu_5741_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_64 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_65_fu_5747_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_65 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_66_fu_5757_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_66 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_67_fu_5767_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_67 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_68_fu_6061_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_68 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U7 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_69 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U7 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_6 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln35_3_fu_5773_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE sub_ln35_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_70_fu_6258_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_70 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_71_fu_5779_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_71 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U8 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_72 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U8 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_7 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U8 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_73 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_74_fu_6271_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_74 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_75_fu_6281_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_75 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_76_fu_5785_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_76 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_77_fu_5795_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_77 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_78_fu_5805_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_78 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_79_fu_5815_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_79 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_80_fu_5825_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_80 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_81_fu_5835_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_81 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_82_fu_5845_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_82 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U9 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_83 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U9 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_8 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_84_fu_5851_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_84 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U9 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_85 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln35_4_fu_5857_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE sub_ln35_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U10 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_86 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U10 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_9 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_87_fu_6299_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_87 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_88_fu_6309_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_88 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_89_fu_6319_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_89 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_90_fu_6411_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_90 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_91_fu_5863_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_91 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_92_fu_5873_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_92 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_93_fu_5883_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_93 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_94_fu_5889_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_94 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_95_fu_5899_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_95 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_96_fu_5909_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_96 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_97_fu_6073_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_97 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_98_fu_5915_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_98 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_99_fu_5925_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_99 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_100_fu_5935_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_100 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_101_fu_5941_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_101 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_102_fu_5951_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_102 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_103_fu_5961_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_103 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_104_fu_6089_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_104 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_105_fu_6099_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_105 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_106_fu_5967_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_106 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_107_fu_5977_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_107 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_108_fu_5987_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_108 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_109_fu_5993_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_109 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_110_fu_6003_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_110 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_111_fu_6013_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_111 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_112_fu_6111_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_112 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U11 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_113 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME am_addmul_8s_8s_5s_13_4_1_U11 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_10 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln35_5_fu_6019_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE sub_ln35_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_114_fu_6334_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_114 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_115_fu_6025_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_115 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U12 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_116 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U12 SOURCE fir128_best/fir.cpp:35 VARIABLE mul_ln35_11 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE add PRAGMA {} RTLNAME ama_addmuladd_8s_8s_4ns_12s_14_4_1_U12 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_117 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_118_fu_6347_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_118 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_119_fu_6357_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_119 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_120_fu_6427_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_120 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_121_fu_6437_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE add_ln35_121 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME acc_fu_6447_p2 SOURCE fir128_best/fir.cpp:35 VARIABLE acc LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 12 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.326 seconds; current allocated memory: 1.392 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fir.
+INFO: [VLOG 209-307] Generating Verilog RTL for fir.
+Execute       syn_report -model fir -printsummary 
+INFO: [HLS 200-789] **** Estimated Fmax: 142.60 MHz
+Command     autosyn done; 7.262 sec.
+Command   csynth_design done; 18.898 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 4 seconds. CPU system time: 1 seconds. Elapsed time: 18.898 seconds; current allocated memory: 0.000 MB.
+Command ap_source done; 21.636 sec.
+Execute cleanup_all 
